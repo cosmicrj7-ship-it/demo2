@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap');
 
 :root {
-    --bg-color: #f8fafc;
-    --primary-indigo: #1e40af;
-    --primary-indigo-rgb: 30, 64, 175;
-    --accent-silver: #64748b;
-    --accent-silver-rgb: 100, 116, 139;
-    --text-main: #0f172a;
-    --text-muted: #475569;
-    --surface: rgba(255, 255, 255, 0.9);
-    --card-shadow: 0 20px 50px rgba(30, 64, 175, 0.05);
+    --bg-color: #fdf8f0;
+    --primary-indigo: #0d5c63;
+    --primary-indigo-rgb: 13, 92, 99;
+    --accent-silver: #52796f;
+    --accent-silver-rgb: 82, 121, 111;
+    --text-main: #1a2e2b;
+    --text-muted: #4a6760;
+    --surface: rgba(255, 253, 248, 0.95);
+    --card-shadow: 0 20px 50px rgba(13, 92, 99, 0.07);
     --transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -38,7 +38,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(rgba(30, 64, 175, 0.03) 1.5px, transparent 1.5px);
+    background-image: radial-gradient(rgba(13, 92, 99, 0.04) 1.5px, transparent 1.5px);
     background-size: 40px 40px;
     z-index: -1;
     pointer-events: none;
@@ -242,7 +242,7 @@ nav .container {
     height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: url('dental_interior.png') center center / cover no-repeat;
     position: relative;
     overflow: hidden;
     padding-top: 80px;
@@ -251,12 +251,13 @@ nav .container {
 .hero::before {
     content: '';
     position: absolute;
-    top: -10%;
-    right: -10%;
-    width: 600px;
-    height: 600px;
-    background: rgba(var(--primary-indigo-rgb), 0.05);
-    border-radius: 50%;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(13, 46, 43, 0.82) 0%,
+        rgba(13, 92, 99, 0.72) 60%,
+        rgba(82, 121, 111, 0.55) 100%
+    );
     z-index: 0;
 }
 
@@ -277,28 +278,41 @@ nav .container {
 .badge {
     display: inline-block;
     padding: 8px 16px;
-    background: rgba(var(--primary-indigo-rgb), 0.05);
+    background: rgba(255,255,255,0.12);
+    color: #ffffff;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(6px);
+}
+
+/* Teal badge for non-hero sections */
+.badge-teal {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(13, 92, 99, 0.07);
     color: var(--primary-indigo);
     border-radius: 50px;
     font-size: 0.85rem;
     margin-bottom: 20px;
-    border: 1px solid rgba(var(--primary-teal-rgb), 0.1);
+    border: 1px solid rgba(13, 92, 99, 0.15);
 }
 
 .hero h1 {
     font-size: 4rem;
     line-height: 1.1;
     margin-bottom: 24px;
-    color: var(--text-main);
+    color: #ffffff;
 }
 
 .hero h1 span {
-    color: var(--primary-indigo);
+    color: #7ecec4;
 }
 
 .hero p {
     font-size: 1.1rem;
-    color: var(--text-muted);
+    color: rgba(255,255,255,0.82);
     margin-bottom: 40px;
     max-width: 90%;
 }
@@ -514,7 +528,7 @@ nav .container {
 
 /* Stats/Info Section */
 .stats-section {
-    background: var(--primary-indigo);
+    background: linear-gradient(135deg, #0d5c63 0%, #0a4a50 100%);
     color: white;
     border-radius: 50px;
     margin: 50px 2rem;
@@ -595,16 +609,17 @@ nav .container {
 /* Footer */
 footer {
     padding: 80px 0 40px;
-    background: #f8f9fa;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    background: #1a2e2b;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    color: rgba(255,255,255,0.85);
 }
 
 .footer-bottom {
     text-align: center;
     margin-top: 60px;
     padding-top: 30px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    color: var(--text-muted);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.45);
     font-size: 0.9rem;
 }
 
@@ -679,6 +694,7 @@ footer {
         height: auto;
         min-height: 100svh;
         padding: 100px 0 50px;
+        background-attachment: scroll;
     }
 
     .hero h1 {
