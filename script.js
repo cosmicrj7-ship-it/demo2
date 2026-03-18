@@ -1,4 +1,4 @@
-// Aggarwal Dental Care Interactive Features
+// DCI (Dental Clinic India) Interactive Features
 
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Lucide Icons
